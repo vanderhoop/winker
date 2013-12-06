@@ -1,1 +1,5 @@
-<%= @users.first.winks %>
+<% @users.each do |user| %>
+  <% url = "/users/" + user.id.to_s %>
+  <li><a href=<%= url %>><%= user.name %></a></li><button class="wink" id=wink-at-<%= user.id %>></button>
+<% end  %>
+
